@@ -1,60 +1,83 @@
 body {
   background-color: #797080;
-  padding: 20px;
   margin: 0;
+  height: 100vh;
 }
-
-@media(min-width: 900px) {
-    h1,
-    h2,
-    p,
-    ul,
-    li {
-      font-family: "Open Sans", "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell,
-        "Helvetica Neue", sans-serif;
-    
-    }
-    .container {
-      padding: 0px 20%;
-      h1 {
-          color: white;
-      }
-    }
-    ul.header {
-      background-color: #111;
-      padding: 0;
-      li {
-        display: inline;
-        list-style-type: none;
-        margin: 0;
-        outline: none;
-        a {
-          color: #fff;
-          font-weight: bold;
-          text-decoration: none;
-          padding: 20px;
-          display: inline-block;
-        }
-      }
-      .active {
-        background-color: #84ceff;
-      }
-      a {
-        outline: none;
-      }
-      a:hover {
-        opacity: 0.9;
-      }
-    }
-    .content {
-      background-color: #fff;
+html {
+  overflow-y: scroll;
+}
+.container {
+  font-family: 'Open Sans', 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell,
+    'Helvetica Neue', sans-serif;
+}
+header {
+  color: white;
+}
+a {
+  outline: none;
+  font-weight: bold;
+  text-decoration: none;
+  display: inline-block;
+}
+ul.header {
+  background-color: #111;
+  padding: 0;
+  li {
+    display: inline;
+    list-style-type: none;
+    margin: 0;
+    outline: none;
+    a {
+      color: #fff;
       padding: 20px;
-      h2 {
-        padding: 0;
-        margin: 0;
-      }
-      li {
-        margin-bottom: 10px;
+    }
+  }
+  .active {
+    background-color: #84ceff;
+  }
+
+  a:hover {
+    opacity: 0.9;
+  }
+}
+.main {
+  background-color: #fff;
+  .content {
+    min-height: 95vh;
+    background-color: rgb(83, 167, 182);
+    margin: 0px;
+  }
+  .footer {
+    background-color: #8299a8;
+    height: 5vh;
+    margin: 0px;
+  }
+}
+@media (min-width: 900px) {
+  .container {
+    display: flex;
+    flex-direction: row;
+  }
+  header {
+    position: sticky;
+    height: 100vh;
+    flex: 1;
+    top: 0px;
+    .header {
+      display: inline-block;
+      width: 100%;
+      a {
+        display: block;
       }
     }
+  }
+  .main {
+    flex-direction: column;
+    min-height: 100vh;
+    flex: 4;
+  }
+  .header.li {
+    display: flex;
+    flex-direction: column;
+  }
 }

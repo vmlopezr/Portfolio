@@ -1,5 +1,5 @@
-import React, { memo } from "react";
-
+import React, { memo } from 'react';
+import './styles.scss';
 
 const Home = memo(() => {
   return (
