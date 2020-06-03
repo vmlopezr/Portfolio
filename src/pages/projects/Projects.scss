@@ -1,0 +1,77 @@
+.projectsContainer {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+
+.ModalItem {
+  width: 90%;
+  height: 400px;
+  margin: 10px 10px;
+  background-color: rgb(48, 22, 90);
+  border: 1px solid #000;
+  padding: 0px;
+  h2 {
+    color: rgb(212, 212, 212);
+  }
+}
+.button-content {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  padding: 0px;
+  margin: 0px;
+}
+:hover > .button-content {
+  background-color: rgba(92, 56, 151, 0.753);
+  cursor: pointer;
+  h2 {
+    color: #fff;
+    opacity: 1;
+    transition: opacity 0.7s;
+  }
+}
+:active > .button-content {
+  background-color: rgba(92, 56, 151, 0.753);
+  cursor: pointer;
+  h2 {
+    color: #fff;
+    opacity: 1;
+    transition: opacity 0.7s;
+  }
+}
+button:not(:-moz-focusring):focus > .ComplexButton-Content {
+  box-shadow: none;
+}
+
+:focus > .button-content {
+  background-color: rgba(92, 56, 151, 0.753);
+  cursor: pointer;
+  h2 {
+    color: #fff;
+    opacity: 1;
+    transition: opacity 0.7s;
+  }
+}
+.ModalItem:focus,
+.button-content {
+  outline: none;
+}
+@media (min-width: 800px) {
+  .ModalItem {
+    width: 45%;
+    h2 {
+      color: rgb(226, 225, 225);
+      opacity: 0;
+    }
+  }
+
+  .projectsContainer {
+    flex-direction: row;
+    padding-top: 30px;
+  }
+}

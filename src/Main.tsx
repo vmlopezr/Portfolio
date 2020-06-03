@@ -39,4 +39,5 @@ const Main = memo(() => {
     </HashRouter>
   );
 });
+Main.displayName = 'Main';
 export default Main;

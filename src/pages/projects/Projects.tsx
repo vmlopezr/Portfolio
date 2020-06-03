@@ -1,6 +1,8 @@
 import React, { memo } from 'react';
+import ProjectModal from './ProjectModal';
+import './Projects.scss';
 
-interface Project {
+export interface Project {
   title: string;
   description: string;
   img: string;
@@ -27,7 +29,7 @@ const projects: Project[] = [
     technologies: `A full stack application using a Node JS backend to serve recorded videos, and stream live webcam feed. 
     A sqlite database is used to store camera settings as well as error logs. The website is written with Ionic framework.`,
     githubLink: 'https://github.com/vmlopezr/rpi-dashcam',
-    demoLink: '',
+    demoLink: 'https://vmlopezr.github.io',
   },
   {
     title: 'OWI Robot Arm Model',
@@ -49,24 +51,54 @@ const projects: Project[] = [
     demoLink: '',
   },
 ];
+const modalInitialState = [false, false, false, false];
+
 const Projects = memo(() => {
+  const [modalState, setModalState] = React.useState([...modalInitialState]);
+  const [disablePointer, setPointerEv] = React.useState(false);
+  const showModal = (id: number) => (
+    event: React.MouseEvent<HTMLButtonElement, MouseEvent>
+  ) => {
+    const state = [...modalState];
+    state[id] = true;
+    setModalState(state);
+    setPointerEv(true);
+    event.currentTarget.blur();
+  };
+  const hideModal = (id: number) => {
+    const state = [...modalState];
+    state[id] = false;
+    setModalState(state);
+    setPointerEv(false);
+  };
   return (
-    <div>
-      <h1>Projects</h1>
-      <p>This is the projects page</p>
+    <div className="projectsContainer">
       {projects.map((project, id) => {
         return (
-          <div key={project.title}>
-            <h2>{project.title}</h2>
-            <p>{project.description}</p>
-            <p>{project.technologies}</p>
-            <a href={project.githubLink}>View Code</a>
-            <br />
-            <a href={project.demoLink}>View Demo</a>
-          </div>
+          <button
+            type="button"
+            className="ModalItem"
+            key={project.title}
+            onClick={showModal(id)}
+            tabIndex={0}
+            style={{
+              pointerEvents: disablePointer ? 'none' : 'auto',
+            }}
+          >
+            <span className="button-content" tabIndex={-1}>
+              <h2>{project.title}</h2>
+              <ProjectModal
+                id={id}
+                project={project}
+                show={modalState[id]}
+                hideModal={hideModal}
+              />
+            </span>
+          </button>
         );
       })}
     </div>
   );
 });
+Projects.displayName = 'Projects';
 export default Projects;

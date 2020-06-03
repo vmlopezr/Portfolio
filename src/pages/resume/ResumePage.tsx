@@ -8,4 +8,5 @@ const ResumePage = memo(() => {
     </div>
   );
 });
+ResumePage.displayName = 'ResumePage';
 export default ResumePage;
