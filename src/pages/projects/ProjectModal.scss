@@ -12,30 +12,77 @@
   background: rgba(0, 0, 0, 0.6);
   z-index: 5;
 }
+
 .modal-main {
   position: fixed;
-  background: white;
-  width: 80%;
-  height: auto;
+  background: rgb(255, 129, 129);
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  height: 60%;
   top: 50%;
   left: 50%;
+  opacity: 0;
+  transition: all 500ms ease;
   transform: translate(-50%, -50%);
   z-index: 10;
+  border-radius: 10px;
   h2 {
     position: initial;
     color: #000;
   }
 }
+.video-container {
+  flex: 1;
+  width: 100%;
+  height: 40%;
+  background-color: rgb(0, 0, 0);
+  display: flex;
+}
+video {
+  width: 95%;
+  height: auto;
+  justify-content: center;
+  align-items: center;
+  background-size: cover;
+  max-height: 95%;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.description {
+  flex: 1;
+  background-color: #00f;
+  width: 100%;
+  height: 60%;
+}
 .display-block {
-  display: block;
+  pointer-events: auto;
+  opacity: 1;
 }
 
 .display-none {
-  display: none;
+  opacity: 0;
+  pointer-events: none;
 }
-@media (min-width: 800px) {
+@media (min-width: 900px) {
   .modal-main {
     width: 70%;
+    height: 50%;
     transform: translate(-37.5%, -50%);
+    display: flex;
+    flex-direction: row;
+    .video-container {
+      flex: 1;
+      display: block;
+      width: 50%;
+      height: 100%;
+    }
+    .description {
+      flex: 1;
+      width: 50%;
+      height: 100%;
+    }
   }
 }

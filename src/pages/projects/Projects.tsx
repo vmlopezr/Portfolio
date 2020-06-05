@@ -5,11 +5,15 @@ import modularled from '../../images/modular-led.png';
 import owimodel from '../../images/owi-arm-model.png';
 import owisorting from '../../images/owi-arm-sorting.png';
 import rpidashcam from '../../images/rpi-dashcam.png';
-
+import modularledvideo from '../../images/modular-led.mp4';
+import roboticproject from '../../images/robotics-project.mp4';
+import owimodelvideo from '../../images/owi-arm-model.mp4';
+import rpidashcamvideo from '../../images/rpi-dashcam.mp4';
 export interface Project {
   title: string;
   description: string;
   img: string;
+  videolink: string;
   technologies: string;
   githubLink: string;
   demoLink: string;
@@ -21,10 +25,11 @@ const projects: Project[] = [
     description:
       'An embedded application using a ESP32 Microcontroller to control WS2812 LED Matrices via phone application.',
     img: modularled,
+    videolink: modularledvideo,
     technologies:
       'Phone application is written with React Native. Communicates with the microcontroller via websockets ',
     githubLink: 'https://github.com/vmlopezr/modular-ws2812-display-app',
-    demoLink: '',
+    demoLink: 'https://exp.host/@vmlopez336/WS2812DisplayESP32',
     demoLabel: 'View Expo',
   },
   {
@@ -32,6 +37,7 @@ const projects: Project[] = [
     description:
       'A application controlling UVC compatible USB webcams via web browser on a Raspberry Pi Access Point.',
     img: rpidashcam,
+    videolink: rpidashcamvideo,
     technologies: `A full stack application using a Node JS backend to serve recorded videos, and stream live webcam feed. 
     A sqlite database is used to store camera settings as well as error logs. The website is written with Ionic framework.`,
     githubLink: 'https://github.com/vmlopezr/rpi-dashcam',
@@ -43,6 +49,7 @@ const projects: Project[] = [
     description:
       'A three.js model of a OWI Robot Arm. Written to help visualize forward kinematics',
     img: owimodel,
+    videolink: owimodelvideo,
     technologies: 'Phone application is written using React Native.',
     githubLink: 'https://github.com/vmlopezr/owi-arm-model',
     demoLink: 'https://vmlopezr.github.io/owi-arm-model',
@@ -53,6 +60,7 @@ const projects: Project[] = [
     description:
       'A robotics project controlling a OWI Robot arm to place colored objects based on the position of QR codes.',
     img: owisorting,
+    videolink: roboticproject,
     technologies:
       'The robot is controlled with a STM32F4 microcontroller receiving position data from python OpenCV script via serial connection.',
     githubLink: 'https://github.com/vmlopezr/owi-arm-model',

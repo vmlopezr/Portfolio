@@ -11,22 +11,33 @@ interface ModalProps {
 
 const ProjectModal = memo(
   (props: ModalProps) => {
-    const showModal = props.show ? 'modal display-block' : 'modal display-none';
+    const showModal = props.show ? 'display-block' : 'display-none';
     const onClick = (event: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
       props.hideModal(props.id);
       event.stopPropagation();
       event.preventDefault();
     };
     return (
-      <div className={showModal}>
+      <div className={'modal ' + showModal}>
         <div className="overlay" onClick={onClick} />
-        <section className="modal-main">
-          <h2>{props.project.title}</h2>
-          <p>{props.project.description}</p>
-          <p>{props.project.technologies}</p>
-          <a href={props.project.githubLink}>View Code</a>
-          <br />
-          <a href={props.project.demoLink}>{props.project.demoLabel}</a>
+
+        <section className={'modal-main ' + showModal}>
+          <div
+            className="video-container"
+            style={{ display: props.show ? 'block' : 'none' }}
+          >
+            <video controls>
+              <source src={props.project.videolink} type="video/mp4" />
+            </video>
+          </div>
+          <div className="description">
+            <h2>{props.project.title}</h2>
+            <p>{props.project.description}</p>
+            <p>{props.project.technologies}</p>
+            <a href={props.project.githubLink}>View Code</a>
+            <br />
+            <a href={props.project.demoLink}>{props.project.demoLabel}</a>
+          </div>
         </section>
       </div>
     );
