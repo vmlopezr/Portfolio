@@ -1,0 +1,41 @@
+.internship {
+  color: #fff;
+  padding: 20px;
+  ul {
+    padding-left: 10px;
+  }
+  li {
+    text-align: justify;
+    padding: 0px;
+  }
+}
+.position {
+  margin: 0px;
+  padding: 0px;
+  font-size: 3vh;
+}
+.company {
+  margin: 0px;
+  padding: 0px;
+  font-size: 2.5vh;
+}
+.position-info {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  h3 {
+    margin: 0px;
+    padding: 0px;
+    font-style: italic;
+    font-size: 2vh;
+  }
+}
+
+@media (min-width: 500px) {
+  .internship {
+    li {
+      text-align: left;
+      width: 90%;
+    }
+  }
+}

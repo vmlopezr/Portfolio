@@ -26,7 +26,7 @@ const ProjectModal = memo(
           <p>{props.project.technologies}</p>
           <a href={props.project.githubLink}>View Code</a>
           <br />
-          <a href={props.project.demoLink}>View Demo</a>
+          <a href={props.project.demoLink}>{props.project.demoLabel}</a>
         </section>
       </div>
     );

@@ -10,8 +10,7 @@ const Main = memo(() => {
     <HashRouter>
       <div className="container">
         <header>
-          <h1>Victor Portfolio</h1>
-          <ul className="header">
+          <ul className="menu">
             <li>
               <NavLink exact to="/">
                 Home
@@ -21,9 +20,12 @@ const Main = memo(() => {
               <NavLink to="/projects">Projects</NavLink>
             </li>
             <li>
-              <NavLink to="/resume">Resume</NavLink>
+              <NavLink to="/resume">Experience</NavLink>
             </li>
           </ul>
+          <footer className="pcfooter">
+            <a href="http://github.com/vmlopezr">Source Code</a>
+          </footer>
         </header>
         <div className="main">
           <div className="content">
@@ -31,7 +33,7 @@ const Main = memo(() => {
             <Route path="/projects" component={Projects} />
             <Route path="/resume" component={ResumePage} />
           </div>
-          <footer className="footer">
+          <footer className="mobilefooter">
             <a href="http://github.com/vmlopezr">Source Code</a>
           </footer>
         </div>

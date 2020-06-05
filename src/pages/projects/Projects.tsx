@@ -1,6 +1,10 @@
 import React, { memo } from 'react';
 import ProjectModal from './ProjectModal';
 import './Projects.scss';
+import modularled from '../../images/modular-led.png';
+import owimodel from '../../images/owi-arm-model.png';
+import owisorting from '../../images/owi-arm-sorting.png';
+import rpidashcam from '../../images/rpi-dashcam.png';
 
 export interface Project {
   title: string;
@@ -9,46 +13,51 @@ export interface Project {
   technologies: string;
   githubLink: string;
   demoLink: string;
+  demoLabel: string;
 }
 const projects: Project[] = [
   {
     title: 'WS2812 Modular Display',
     description:
       'An embedded application using a ESP32 Microcontroller to control WS2812 LED Matrices via phone application.',
-    img: '',
+    img: modularled,
     technologies:
       'Phone application is written with React Native. Communicates with the microcontroller via websockets ',
     githubLink: 'https://github.com/vmlopezr/modular-ws2812-display-app',
     demoLink: '',
+    demoLabel: 'View Expo',
   },
   {
     title: 'Raspberry Pi Dashcam',
     description:
       'A application controlling UVC compatible USB webcams via web browser on a Raspberry Pi Access Point.',
-    img: '',
+    img: rpidashcam,
     technologies: `A full stack application using a Node JS backend to serve recorded videos, and stream live webcam feed. 
     A sqlite database is used to store camera settings as well as error logs. The website is written with Ionic framework.`,
     githubLink: 'https://github.com/vmlopezr/rpi-dashcam',
-    demoLink: 'https://vmlopezr.github.io',
+    demoLink: 'https://vmlopezr.github.io/rpi-dashcam-front-end',
+    demoLabel: 'View Demo',
   },
   {
     title: 'OWI Robot Arm Model',
     description:
       'A three.js model of a OWI Robot Arm. Written to help visualize forward kinematics',
-    img: '',
+    img: owimodel,
     technologies: 'Phone application is written using React Native.',
     githubLink: 'https://github.com/vmlopezr/owi-arm-model',
     demoLink: 'https://vmlopezr.github.io/owi-arm-model',
+    demoLabel: 'View Demo',
   },
   {
     title: 'OWI Robot Arm Color Sorting',
     description:
       'A robotics project controlling a OWI Robot arm to place colored objects based on the position of QR codes.',
-    img: '',
+    img: owisorting,
     technologies:
       'The robot is controlled with a STM32F4 microcontroller receiving position data from python OpenCV script via serial connection.',
     githubLink: 'https://github.com/vmlopezr/owi-arm-model',
     demoLink: '',
+    demoLabel: 'View Demo',
   },
 ];
 const modalInitialState = [false, false, false, false];
@@ -85,15 +94,19 @@ const Projects = memo(() => {
               pointerEvents: disablePointer ? 'none' : 'auto',
             }}
           >
-            <span className="button-content" tabIndex={-1}>
-              <h2>{project.title}</h2>
+            <div
+              data-content={project.title}
+              className="button-content"
+              tabIndex={-1}
+            >
+              <img src={project.img} alt={''} />
               <ProjectModal
                 id={id}
                 project={project}
                 show={modalState[id]}
                 hideModal={hideModal}
               />
-            </span>
+            </div>
           </button>
         );
       })}

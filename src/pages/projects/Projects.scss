@@ -1,6 +1,7 @@
 .projectsContainer {
   display: flex;
-  width: 100%;
+  width: 100vw;
+  min-height: 100%;
   justify-content: center;
   align-items: center;
   flex-direction: column;
@@ -8,16 +9,23 @@
 }
 
 .ModalItem {
-  width: 90%;
-  height: 400px;
+  width: 90vw;
+  height: 90vw;
   margin: 10px 10px;
-  background-color: rgb(48, 22, 90);
-  border: 1px solid #000;
+  background-color: rgba(75, 75, 75, 0);
+  border: none;
   padding: 0px;
-  h2 {
-    color: rgb(212, 212, 212);
-  }
 }
+img {
+  display: block;
+  margin: auto;
+  z-index: 0;
+  width: 90vw;
+  height: auto;
+  border-radius: 25px;
+  box-shadow: 0px 0px 5px 3px rgb(39, 50, 68);
+}
+
 .button-content {
   position: relative;
   display: inline-block;
@@ -25,53 +33,143 @@
   height: 100%;
   padding: 0px;
   margin: 0px;
-}
-:hover > .button-content {
-  background-color: rgba(92, 56, 151, 0.753);
-  cursor: pointer;
-  h2 {
-    color: #fff;
+  &:before {
+    content: attr(data-content);
+    position: absolute;
+    color: rgb(250, 250, 250);
+    font-size: 30px;
+    font-weight: 600;
+    width: 100%;
+    top: 20%;
+    left: 50%;
+    z-index: 2;
     opacity: 1;
-    transition: opacity 0.7s;
+    transform: translate(-50%, -50%);
+  }
+  &:after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: calc(100% + 1px);
+    top: 0;
+    left: 0;
+    z-index: 1;
+    opacity: 1;
+    background: #00000083;
+    border-radius: 25px;
   }
 }
-:active > .button-content {
-  background-color: rgba(92, 56, 151, 0.753);
-  cursor: pointer;
-  h2 {
-    color: #fff;
-    opacity: 1;
-    transition: opacity 0.7s;
+@media (min-width: 900px) {
+  .projectsContainer {
+    width: 80vw;
   }
-}
-button:not(:-moz-focusring):focus > .ComplexButton-Content {
-  box-shadow: none;
-}
-
-:focus > .button-content {
-  background-color: rgba(92, 56, 151, 0.753);
-  cursor: pointer;
-  h2 {
-    color: #fff;
-    opacity: 1;
-    transition: opacity 0.7s;
-  }
-}
-.ModalItem:focus,
-.button-content {
-  outline: none;
-}
-@media (min-width: 800px) {
   .ModalItem {
-    width: 45%;
-    h2 {
+    width: 50vw;
+    height: 50vw;
+    .project-label {
       color: rgb(226, 225, 225);
       opacity: 0;
     }
   }
+  img {
+    width: 100%;
+  }
+  .button-content {
+    &:after {
+      opacity: 0.3;
+      background: #0000008e;
+    }
+    &:before {
+      opacity: 0;
+    }
+  }
+  :hover > .button-content {
+    cursor: pointer;
+    img:after {
+      opacity: 1;
+      transition: opacity 0.7s;
+    }
+    .project-label {
+      color: #ffffff;
+      opacity: 1;
+      transition: opacity 0.7s;
+      font-size: 30px;
+    }
+    &:before {
+      top: 80%;
+      opacity: 1;
+      transition: opacity 0.7s;
+    }
+    &:after {
+      opacity: 1;
+      transition: opacity 0.7s;
+    }
+  }
+  :active > .button-content {
+    cursor: pointer;
+    img:after {
+      opacity: 1;
+      transition: opacity 0.7s;
+    }
+    .project-label {
+      color: #ffffff;
+      opacity: 1;
+      transition: opacity 0.7s;
+      font-size: 30px;
+    }
+    &:before {
+      opacity: 1;
+      transition: opacity 0.7s;
+    }
+    &:after {
+      opacity: 1;
+      transition: opacity 0.7s;
+    }
+  }
+  button:not(:-moz-focusring):focus > .ComplexButton-Content {
+    box-shadow: none;
+  }
 
+  :focus > .button-content {
+    cursor: pointer;
+    img:after {
+      opacity: 1;
+      transition: opacity 0.7s;
+    }
+    .project-label {
+      color: #ffffff;
+      opacity: 1;
+      transition: opacity 0.7s;
+      font-size: 30px;
+    }
+    &:before {
+      opacity: 1;
+      transition: opacity 0.7s;
+    }
+    &:after {
+      opacity: 1;
+      transition: opacity 0.7s;
+    }
+  }
+  .ModalItem:focus,
+  .button-content {
+    outline: none;
+    position: relative;
+  }
+}
+@media (min-width: 1360px) {
+  .ModalItem {
+    width: 45%;
+    max-width: 455px;
+    height: auto;
+    margin: 0px 4%;
+    .project-label {
+      color: rgb(226, 225, 225);
+      opacity: 0;
+    }
+  }
   .projectsContainer {
     flex-direction: row;
-    padding-top: 30px;
+    width: 100%;
   }
 }
