@@ -94,7 +94,7 @@ const projects: Project[] = [
     img: owimodel,
     videolink: owimodelvideo,
     // prettier-ignore
-    technologies: ['React', 'three.js', 'SCSS', 'Docker'],
+    technologies: ['React.js', 'three.js', 'SCSS', 'Docker'],
     links: [
       {
         label: 'View Source',
@@ -110,7 +110,8 @@ const projects: Project[] = [
     title: 'OWI Robot Arm Color Sorting',
     description: [
       'A robotics project controlling a OWI Robot Arm to place colored objects ' +
-        'based on the position of QR codes. A STM32F4 microcontroller is used to ' +
+        'based on the position of QR codes.',
+      ' A STM32F4 microcontroller is used to ' +
         'drive small DC motors. It receives position data via Direct Memory Access ' +
         'on its USART peripheral from a the OpenCV python program accessing a USB webcam.',
     ],

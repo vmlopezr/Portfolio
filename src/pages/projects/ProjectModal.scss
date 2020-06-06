@@ -64,6 +64,7 @@ $font-color: #d1d1d1;
     h1 {
       color: #fff;
       font-size: 3.5vh;
+      margin: 5px 20px;
     }
     .tech-container {
       display: flex;
@@ -86,6 +87,9 @@ $font-color: #d1d1d1;
       text-align: justify;
 
       font-size: 13px;
+      p {
+        margin: 20px;
+      }
     }
     .github-links {
       display: flex;

@@ -1,8 +1,11 @@
 .internship {
-  color: #fff;
+  color: #c3c2c5;
   padding: 20px;
+  h1 {
+    color: #fff;
+  }
   ul {
-    padding-left: 10px;
+    padding-left: 20px;
   }
   li {
     text-align: justify;
@@ -17,7 +20,7 @@
 .company {
   margin: 0px;
   padding: 0px;
-  font-size: 2.5vh;
+  font-size: 2.2vh;
 }
 .position-info {
   display: flex;
@@ -33,9 +36,13 @@
 
 @media (min-width: 500px) {
   .internship {
-    li {
-      text-align: left;
-      width: 90%;
+    padding: 20px 50px;
+    ul {
+      padding-left: 20px;
+      li {
+        text-align: left;
+        width: 90%;
+      }
     }
   }
 }

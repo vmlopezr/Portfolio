@@ -1,5 +1,6 @@
 $background-color: #1a1f2b;
 $header-color: #202c38;
+$menu-border: #2b3b4b;
 body {
   background-color: $background-color;
   position: fixed;
@@ -32,13 +33,13 @@ html {
 }
 .main {
   background-color: $background-color;
+  position: relative;
   height: calc(100vh - 145px);
   width: 100vw;
   display: flex;
   flex-direction: column;
   overflow-y: scroll;
   overflow-x: hidden;
-
   .content {
     background-color: $background-color;
     margin: 0px;
@@ -50,7 +51,32 @@ header {
   color: white;
   background-color: $header-color;
   height: 61px;
-  border-bottom: 1px solid rgb(78, 78, 78);
+  border-bottom: 1px solid $menu-border;
+  .menu {
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    border-bottom: 1px solid $menu-border;
+    li {
+      flex: 1;
+      list-style-type: none;
+      border-top: 1px solid $menu-border;
+      a {
+        color: #fff;
+        font-size: 15px;
+        padding: 19px 0px;
+      }
+    }
+  }
+}
+.active {
+  box-sizing: border-box;
+  background-color: #2a3846;
+  border-bottom: 3px solid #f00;
 }
 a {
   font-weight: bold;
@@ -58,34 +84,14 @@ a {
   display: block;
   box-sizing: border-box;
 }
-.menu {
-  padding: 0;
-  margin: 0;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  text-align: center;
-  justify-content: center;
-  li {
-    flex: 1;
-    list-style-type: none;
-    a {
-      color: #fff;
-      font-size: 15px;
-      padding: 19px 0px;
-    }
-    a.active {
-      box-sizing: border-box;
-      background-color: #2a3846;
-      border-bottom: 3px solid #f00;
-    }
-  }
+.media-pc {
+  display: none;
 }
-
 .mobilefooter {
   display: flex;
   flex-direction: row;
-  flex: 1;
+  align-items: center;
+  margin: 40px 0px 20px 0px;
   a {
     color: #fdfdfd;
     padding: 0 10px;
@@ -107,44 +113,98 @@ a {
     width: 100vw;
     height: 100vh;
   }
-
   .main {
     flex-direction: column;
     min-height: 100vh;
     width: 100%;
   }
-  .pcfooter {
-    display: initial;
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    a {
-      color: #ffffff;
-      padding: 0 10px;
-    }
-    padding: 5px 10px;
-  }
   .mobilefooter {
     display: none;
   }
+  .media-mobile {
+    display: none;
+  }
+  .media-pc {
+    display: block;
+    position: absolute;
+    left: 0;
+    bottom: 5%;
+    width: 100%;
+    .github-link {
+      display: flex;
+      position: relative;
+      flex-direction: row;
+      align-items: center;
+      border-top: 1px solid $menu-border;
+      border-bottom: 1px solid $menu-border;
+      width: 100%;
+      color: #fff;
+      z-index: 1;
+      &:after {
+        content: '';
+        position: absolute;
+        background-color: #f00;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        transform: scaleX(0);
+        transition: transform 200ms ease-in;
+        transform-origin: right;
+        z-index: -1;
+      }
+      &:hover:after {
+        transform: scaleX(1);
+        z-index: -1;
+      }
+    }
+    .linkedin-link {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      position: relative;
+      border-bottom: 1px solid $menu-border;
+      color: #fff;
+      z-index: 1;
+      &:after {
+        content: '';
+        position: absolute;
+        background-color: #f00;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        transform: scaleX(0);
+        transition: transform 200ms ease-in;
+        transform-origin: right;
+        z-index: -1;
+      }
+      &:hover:after {
+        transform: scaleX(1);
+        z-index: -1;
+      }
+    }
+  }
+
   header {
+    position: relative;
     width: 250px;
     height: 100vh;
     top: 0px;
     border-bottom: 0px;
-    border-right: 1px solid rgb(78, 78, 78);
+    border-right: 1px solid $menu-border;
     .menu {
       display: inline-block;
       width: 250px;
       text-align: initial;
       margin: 20px 0px;
-      a {
+      li a {
         position: relative;
         display: block;
         background-color: $header-color;
         font-size: 20px;
         padding: 20px;
-        z-index: 3;
+        z-index: 1;
         &:after {
           content: '';
           position: absolute;
@@ -158,21 +218,21 @@ a {
           transform-origin: right;
           z-index: -1;
         }
-      }
-      a.active {
-        border-right: 5px solid #ff0000;
-        border-bottom: 0px;
-        background-color: #2a3846;
+        &.active {
+          border-right: 5px solid #ff0000;
+          border-bottom: 0px;
+          background-color: #2a3846;
+          &:hover {
+            background-color: #2d3a47;
+            border: none;
+          }
+        }
         &:hover {
           background-color: #2d3a47;
-          border: none;
-        }
-      }
-      a:hover {
-        background-color: #2d3a47;
-        &:after {
-          transform: scaleX(1);
-          z-index: -1;
+          &:after {
+            transform: scaleX(1);
+            z-index: -1;
+          }
         }
       }
     }
@@ -180,6 +240,17 @@ a {
       .active {
         border: none;
       }
+    }
+    .pcfooter {
+      display: initial;
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      a {
+        color: #ffffff;
+        padding: 0 10px;
+      }
+      padding: 5px 10px;
     }
   }
 }
