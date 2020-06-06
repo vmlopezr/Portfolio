@@ -7,7 +7,6 @@
   flex-direction: column;
   flex-wrap: wrap;
 }
-
 .ModalItem {
   width: 90vw;
   height: 90vw;
@@ -37,9 +36,9 @@ img {
     content: attr(data-content);
     position: absolute;
     color: rgb(250, 250, 250);
-    font-size: 30px;
+    font-size: 4vh;
     font-weight: 600;
-    width: 100%;
+    width: 90%;
     top: 20%;
     left: 50%;
     z-index: 2;
@@ -59,71 +58,67 @@ img {
     border-radius: 25px;
   }
 }
+.ModalItem:focus,
+.button-content {
+  outline: none;
+  position: relative;
+}
 @media (min-width: 900px) {
   .projectsContainer {
     width: 80vw;
   }
   .ModalItem {
-    width: 50vw;
-    height: 50vw;
-    .project-label {
-      color: rgb(226, 225, 225);
-      opacity: 0;
+    width: 45%;
+    max-width: 515px;
+    height: auto;
+    .button-content {
+      &:after {
+        opacity: 0.3;
+        background: #0000008e;
+      }
+      &:before {
+        opacity: 0;
+      }
+      img {
+        width: 100%;
+      }
     }
   }
-  img {
-    width: 100%;
-  }
-  .button-content {
-    &:after {
-      opacity: 0.3;
-      background: #0000008e;
-    }
-    &:before {
-      opacity: 0;
-    }
-  }
+
   :hover > .button-content {
     cursor: pointer;
-    img:after {
-      opacity: 1;
-      transition: opacity 0.7s;
-    }
-    .project-label {
-      color: #ffffff;
-      opacity: 1;
-      transition: opacity 0.7s;
-      font-size: 30px;
+    img {
+      transform: scale(1.05);
+      transition: all 400ms ease-in-out;
     }
     &:before {
       top: 80%;
       opacity: 1;
-      transition: opacity 0.7s;
+      transition: all 400ms ease-in-out;
     }
     &:after {
+      border: 1px solid #fff;
       opacity: 1;
-      transition: opacity 0.7s;
+      transform: scale(1.05);
+      transition: all 400ms ease-in-out;
     }
   }
   :active > .button-content {
     cursor: pointer;
-    img:after {
-      opacity: 1;
-      transition: opacity 0.7s;
-    }
-    .project-label {
-      color: #ffffff;
-      opacity: 1;
-      transition: opacity 0.7s;
-      font-size: 30px;
+    img {
+      transform: scale(1.05);
+      transition: all 400ms ease-in-out;
     }
     &:before {
+      top: 80%;
       opacity: 1;
-      transition: opacity 0.7s;
+      transition: all 400ms ease-in-out;
     }
     &:after {
+      border: 1px solid #fff;
       opacity: 1;
-      transition: opacity 0.7s;
+      transform: scale(1.05);
+      transition: all 400ms ease-in-out;
     }
   }
   button:not(:-moz-focusring):focus > .ComplexButton-Content {
@@ -132,41 +127,29 @@ img {
 
   :focus > .button-content {
     cursor: pointer;
-    img:after {
-      opacity: 1;
-      transition: opacity 0.7s;
-    }
-    .project-label {
-      color: #ffffff;
-      opacity: 1;
-      transition: opacity 0.7s;
-      font-size: 30px;
+    img {
+      transform: scale(1.05);
+      transition: all 400ms ease-in-out;
     }
     &:before {
+      top: 80%;
       opacity: 1;
-      transition: opacity 0.7s;
+      transition: all 400ms ease-in-out;
     }
     &:after {
+      border: 1px solid #fff;
       opacity: 1;
-      transition: opacity 0.7s;
+      transform: scale(1.05);
+      transition: all 400ms ease-in-out;
     }
-  }
-  .ModalItem:focus,
-  .button-content {
-    outline: none;
-    position: relative;
   }
 }
 @media (min-width: 1360px) {
   .ModalItem {
     width: 45%;
-    max-width: 455px;
+    max-width: 515px;
     height: auto;
-    margin: 0px 4%;
-    .project-label {
-      color: rgb(226, 225, 225);
-      opacity: 0;
-    }
+    margin: 10px 5%;
   }
   .projectsContainer {
     flex-direction: row;

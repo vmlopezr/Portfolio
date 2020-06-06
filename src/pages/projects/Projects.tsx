@@ -11,61 +11,119 @@ import owimodelvideo from '../../images/owi-arm-model.mp4';
 import rpidashcamvideo from '../../images/rpi-dashcam.mp4';
 export interface Project {
   title: string;
-  description: string;
+  description: string[];
   img: string;
   videolink: string;
-  technologies: string;
-  githubLink: string;
-  demoLink: string;
-  demoLabel: string;
+  technologies: string[];
+  links: sourcefiles[];
+}
+interface sourcefiles {
+  link: string;
+  label: string;
 }
 const projects: Project[] = [
   {
     title: 'WS2812 Modular Display',
-    description:
-      'An embedded application using a ESP32 Microcontroller to control WS2812 LED Matrices via phone application.',
+    description: [
+      'An embedded application that controls a large matrix of up to 1024 WS2812 leds.',
+      'The project uses a ESP32 microcontroller to ' +
+        'drive an led display and runs a websocket server ' +
+        'that receives data from a phone application.',
+      ' The display can be updated real-time and ' +
+        'a sequence of frames can be set to loop through. The ESP32 interfaces with an SD card breakout ' +
+        'board to save frame data and store default sequences to display on start up.',
+    ],
     img: modularled,
     videolink: modularledvideo,
-    technologies:
-      'Phone application is written with React Native. Communicates with the microcontroller via websockets ',
-    githubLink: 'https://github.com/vmlopezr/modular-ws2812-display-app',
-    demoLink: 'https://exp.host/@vmlopez336/WS2812DisplayESP32',
-    demoLabel: 'View Expo',
+    // prettier-ignore
+    technologies: [ 'Expo CLI', 'React Native', 'ESP32', 'C++', 'WebSockets' ],
+    links: [
+      {
+        label: 'Back End Source',
+        link: 'https://github.com/vmlopezr/modular-ws2812-display-esp32',
+      },
+      {
+        label: 'Front End Source',
+        link: 'https://github.com/vmlopezr/modular-ws2812-display-app',
+      },
+      {
+        label: 'View Expo',
+        link: 'https://exp.host/@vmlopez336/WS2812DisplayESP32',
+      },
+    ],
   },
   {
     title: 'Raspberry Pi Dashcam',
-    description:
-      'A application controlling UVC compatible USB webcams via web browser on a Raspberry Pi Access Point.',
+    description: [
+      'A web application controlling UVC compatible USB webcams on ' +
+        'a Raspberry Pi. A RESTful Node.js server runs a python ' +
+        'program that records to the file system and streams ' +
+        'live feed to the application.',
+      'The application is served from a Raspberry Pi that is configured as a' +
+        ' wireless Access Point. This application is available as a Docker image.',
+    ],
     img: rpidashcam,
     videolink: rpidashcamvideo,
-    technologies: `A full stack application using a Node JS backend to serve recorded videos, and stream live webcam feed. 
-    A sqlite database is used to store camera settings as well as error logs. The website is written with Ionic framework.`,
-    githubLink: 'https://github.com/vmlopezr/rpi-dashcam',
-    demoLink: 'https://vmlopezr.github.io/rpi-dashcam-front-end',
-    demoLabel: 'View Demo',
+    // prettier-ignore
+    technologies: [ 
+      'Docker', 'Angular', 'Ionic', 'Node', 'RESTful',
+      'SQLite', 'HTML5', 'SCSS', 'Python3', 'GStreamer',
+    ],
+    links: [
+      {
+        label: 'Back End Source',
+        link: 'https://github.com/vmlopezr/rpi-dashcam',
+      },
+      {
+        label: 'Front End Source',
+        link: 'https://github.com/vmlopezr/rpi-dashcam-front-end',
+      },
+      {
+        label: 'View Demo',
+        link: 'https://vmlopezr.github.io/rpi-dashcam-front-end',
+      },
+    ],
   },
   {
     title: 'OWI Robot Arm Model',
-    description:
-      'A three.js model of a OWI Robot Arm. Written to help visualize forward kinematics',
+    description: [
+      'A three.js model of a OWI Robot Arm. Written to help visualize forward' +
+        ' kinematics. The model allows to move the arm based on its joint angles.' +
+        ' Different positions can be set to animate the arm moving through the positions.',
+    ],
     img: owimodel,
     videolink: owimodelvideo,
-    technologies: 'Phone application is written using React Native.',
-    githubLink: 'https://github.com/vmlopezr/owi-arm-model',
-    demoLink: 'https://vmlopezr.github.io/owi-arm-model',
-    demoLabel: 'View Demo',
+    // prettier-ignore
+    technologies: ['React', 'three.js', 'SCSS', 'Docker'],
+    links: [
+      {
+        label: 'View Source',
+        link: 'https://github.com/vmlopezr/owi-arm-model',
+      },
+      {
+        label: 'View Demo',
+        link: 'https://vmlopezr.github.io/owi-arm-model',
+      },
+    ],
   },
   {
     title: 'OWI Robot Arm Color Sorting',
-    description:
-      'A robotics project controlling a OWI Robot arm to place colored objects based on the position of QR codes.',
+    description: [
+      'A robotics project controlling a OWI Robot Arm to place colored objects ' +
+        'based on the position of QR codes. A STM32F4 microcontroller is used to ' +
+        'drive small DC motors. It receives position data via Direct Memory Access ' +
+        'on its USART peripheral from a the OpenCV python program accessing a USB webcam.',
+    ],
     img: owisorting,
     videolink: roboticproject,
-    technologies:
-      'The robot is controlled with a STM32F4 microcontroller receiving position data from python OpenCV script via serial connection.',
-    githubLink: 'https://github.com/vmlopezr/owi-arm-model',
-    demoLink: '',
-    demoLabel: 'View Demo',
+    // prettier-ignore
+    technologies: [ 'Python3', 'OpenCV', 'STM32', 'DMA', 'USART'],
+    links: [
+      {
+        label: 'View Source',
+        link: 'https://github.com/vmlopezr/owi-arm-model',
+      },
+    ],
   },
 ];
 const modalInitialState = [false, false, false, false];

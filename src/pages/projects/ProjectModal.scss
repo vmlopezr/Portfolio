@@ -1,7 +1,9 @@
+$background-color: #232333;
+$font-color: #d1d1d1;
 .modal {
   pointer-events: auto;
   cursor: auto;
-  font-family: 'Open Sans';
+  z-index: 100;
 }
 .overlay {
   position: fixed;
@@ -10,53 +12,100 @@
   width: 100%;
   height: 100%;
   background: rgba(0, 0, 0, 0.6);
-  z-index: 5;
+  z-index: 100;
 }
 
 .modal-main {
   position: fixed;
-  background: rgb(255, 129, 129);
+  background: $background-color;
   display: flex;
   flex-direction: column;
   width: 90%;
-  height: 60%;
+  height: 80%;
   top: 50%;
   left: 50%;
   opacity: 0;
-  transition: all 500ms ease;
+  transition: all 500ms ease-in-out;
   transform: translate(-50%, -50%);
-  z-index: 10;
+  z-index: 105;
+  border: 1px solid $font-color;
   border-radius: 10px;
-  h2 {
-    position: initial;
-    color: #000;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
+    Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  .video-container {
+    flex: 1;
+    width: 100%;
+    height: 40%;
+    background-color: rgb(0, 0, 0);
+    display: flex;
+    border-radius: 15px 15px 0px 0px;
+    video {
+      width: 95%;
+      max-height: 95%;
+      height: auto;
+      justify-content: center;
+      align-items: center;
+      background-size: cover;
+      position: relative;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+  }
+  .project-information {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    background-color: $background-color;
+    width: 100%;
+    height: 60%;
+    color: $font-color;
+    text-align: left;
+    border-radius: 10px;
+    h1 {
+      color: #fff;
+      font-size: 3.5vh;
+    }
+    .tech-container {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      margin: 5px 20px;
+      .tech-obj {
+        border-radius: 5px;
+        border: 1px solid $font-color;
+        padding: 2px 5px;
+        font-size: 2.2vw;
+        margin-right: 3px;
+        margin-bottom: 3px;
+      }
+    }
+    .about-project {
+      overflow-y: auto;
+      flex: 1;
+      background-color: $background-color;
+      text-align: justify;
+
+      font-size: 13px;
+    }
+    .github-links {
+      display: flex;
+      flex-direction: row;
+      margin: 10px 20px;
+      max-height: 45px;
+      a {
+        display: block;
+        color: #fff;
+        border: 1px solid rgb(0, 0, 0);
+        background-color: #eb1e1e;
+        border-radius: 5px;
+        padding: 5px 10px;
+        text-align: center;
+        margin-right: 10px;
+      }
+    }
   }
 }
-.video-container {
-  flex: 1;
-  width: 100%;
-  height: 40%;
-  background-color: rgb(0, 0, 0);
-  display: flex;
-}
-video {
-  width: 95%;
-  height: auto;
-  justify-content: center;
-  align-items: center;
-  background-size: cover;
-  max-height: 95%;
-  position: relative;
-  top: 50%;
-  transform: translateY(-50%);
-}
 
-.description {
-  flex: 1;
-  background-color: #00f;
-  width: 100%;
-  height: 60%;
-}
 .display-block {
   pointer-events: auto;
   opacity: 1;
@@ -66,11 +115,11 @@ video {
   opacity: 0;
   pointer-events: none;
 }
+
 @media (min-width: 900px) {
   .modal-main {
     width: 70%;
-    height: 50%;
-    transform: translate(-37.5%, -50%);
+    height: 60%;
     display: flex;
     flex-direction: row;
     .video-container {
@@ -78,11 +127,36 @@ video {
       display: block;
       width: 50%;
       height: 100%;
+      border-radius: 20px 0px 0px 20px;
     }
-    .description {
+    .project-information {
       flex: 1;
       width: 50%;
       height: 100%;
+      border-radius: 15px;
+      h1 {
+        font-size: 2.5vw;
+      }
+      .about-project {
+        height: 90%;
+        font-size: 18px;
+        text-align: left;
+      }
+      .github-links {
+        max-height: 60px;
+        font-size: 1.2vw;
+
+        a:hover,
+        a:active {
+          background-color: rgb(255, 43, 43);
+        }
+      }
+      .tech-container .tech-obj {
+        font-size: 1vw;
+        padding: 5px 10px;
+        margin-right: 10px;
+        margin-bottom: 10px;
+      }
     }
   }
 }

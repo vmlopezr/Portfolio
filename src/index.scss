@@ -1,5 +1,5 @@
-$background-color: #353541;
-$header-color: #202b36;
+$background-color: #1a1f2b;
+$header-color: #202c38;
 body {
   background-color: $background-color;
   position: fixed;
@@ -9,6 +9,22 @@ body {
 }
 html {
   overflow-y: hidden;
+}
+::-webkit-scrollbar {
+  -webkit-appearance: none;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.5);
+  border: 2px solid #ffffff;
+}
+
+::-webkit-scrollbar-track {
+  background-color: #ffffff;
 }
 .container {
   font-family: 'Open Sans', 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell,
@@ -34,6 +50,7 @@ header {
   color: white;
   background-color: $header-color;
   height: 61px;
+  border-bottom: 1px solid rgb(78, 78, 78);
 }
 a {
   font-weight: bold;
@@ -54,8 +71,8 @@ a {
     list-style-type: none;
     a {
       color: #fff;
-      font-size: 13px;
-      padding: 20px 0px;
+      font-size: 15px;
+      padding: 19px 0px;
     }
     a.active {
       box-sizing: border-box;
@@ -70,7 +87,7 @@ a {
   flex-direction: row;
   flex: 1;
   a {
-    color: #999999;
+    color: #fdfdfd;
     padding: 0 10px;
   }
   padding: 5px 10px;
@@ -102,7 +119,7 @@ a {
     bottom: 0;
     left: 0;
     a {
-      color: #999999;
+      color: #ffffff;
       padding: 0 10px;
     }
     padding: 5px 10px;
@@ -111,12 +128,14 @@ a {
     display: none;
   }
   header {
-    width: 180px;
+    width: 250px;
     height: 100vh;
     top: 0px;
+    border-bottom: 0px;
+    border-right: 1px solid rgb(78, 78, 78);
     .menu {
       display: inline-block;
-      width: 180px;
+      width: 250px;
       text-align: initial;
       margin: 20px 0px;
       a {

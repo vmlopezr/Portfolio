@@ -1,7 +1,6 @@
 import React, { memo } from 'react';
-import './ProjectModal.scss';
 import { Project } from './Projects';
-
+import './ProjectModal.scss';
 interface ModalProps {
   id: number;
   project: Project;
@@ -30,13 +29,35 @@ const ProjectModal = memo(
               <source src={props.project.videolink} type="video/mp4" />
             </video>
           </div>
-          <div className="description">
-            <h2>{props.project.title}</h2>
-            <p>{props.project.description}</p>
-            <p>{props.project.technologies}</p>
-            <a href={props.project.githubLink}>View Code</a>
-            <br />
-            <a href={props.project.demoLink}>{props.project.demoLabel}</a>
+          <div className="project-information">
+            <h1>{props.project.title}</h1>
+            <div className="about-project">
+              <div className="tech-container">
+                {props.project.technologies.map((value, index) => {
+                  return (
+                    <div key={'tech' + index} className="tech-obj">
+                      {value}
+                    </div>
+                  );
+                })}
+              </div>
+              {props.project.description.map((descValue) => {
+                return <p key={descValue}>{descValue}</p>;
+              })}
+            </div>
+            <div className="github-links">
+              {props.project.links.map((link) => {
+                return (
+                  <a
+                    key={link.link}
+                    href={link.link}
+                    style={{ display: props.show ? 'block' : 'none' }}
+                  >
+                    {link.label}
+                  </a>
+                );
+              })}
+            </div>
           </div>
         </section>
       </div>
