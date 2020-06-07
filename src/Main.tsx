@@ -34,7 +34,7 @@ const Main = memo(() => {
             <a className="external-link" href={resumepdf}>
               <IoMdDownload
                 color="#fff"
-                size="50px"
+                size="35px"
                 style={{ padding: '10px' }}
               />
               Resume
@@ -42,7 +42,7 @@ const Main = memo(() => {
             <a className="external-link" href="https://github.com/vmlopezr">
               <IoLogoGithub
                 color="#fff"
-                size="50px"
+                size="35px"
                 style={{ padding: '10px' }}
               />
               Github
@@ -53,7 +53,7 @@ const Main = memo(() => {
             >
               <IoLogoLinkedin
                 color="#fff"
-                size="50px"
+                size="35px"
                 style={{ padding: '10px' }}
               />
               LinkedIn
@@ -64,7 +64,7 @@ const Main = memo(() => {
             >
               <IoIosDocument
                 color="#fff"
-                size="50px"
+                size="35px"
                 style={{ padding: '10px' }}
               />
               Source Code
