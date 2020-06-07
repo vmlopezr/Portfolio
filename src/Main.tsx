@@ -3,7 +3,13 @@ import { HashRouter, NavLink, Route } from 'react-router-dom';
 import Home from './pages/home/Home';
 import Projects from './pages/projects/Projects';
 import ResumePage from './pages/resume/ResumePage';
-import { IoLogoGithub, IoLogoLinkedin } from 'react-icons/io';
+import {
+  IoLogoGithub,
+  IoLogoLinkedin,
+  IoMdDownload,
+  IoIosDocument,
+} from 'react-icons/io';
+import resumepdf from './images/victor-resume.pdf';
 import './index.scss';
 
 const Main = memo(() => {
@@ -25,7 +31,15 @@ const Main = memo(() => {
             </li>
           </ul>
           <div className="media-pc">
-            <a className="github-link" href="https://github.com/vmlopezr">
+            <a className="external-link" href={resumepdf}>
+              <IoMdDownload
+                color="#fff"
+                size="50px"
+                style={{ padding: '10px' }}
+              />
+              Resume
+            </a>
+            <a className="external-link" href="https://github.com/vmlopezr">
               <IoLogoGithub
                 color="#fff"
                 size="50px"
@@ -34,7 +48,7 @@ const Main = memo(() => {
               Github
             </a>
             <a
-              className="linkedin-link"
+              className="external-link"
               href="https://www.linkedin.com/in/victorlopezrodriguez/"
             >
               <IoLogoLinkedin
@@ -44,11 +58,18 @@ const Main = memo(() => {
               />
               LinkedIn
             </a>
+            <a
+              className="external-link"
+              href="http://github.com/vmlopezr/Portfolio"
+            >
+              <IoIosDocument
+                color="#fff"
+                size="50px"
+                style={{ padding: '10px' }}
+              />
+              Source Code
+            </a>
           </div>
-
-          <footer className="pcfooter">
-            <a href="http://github.com/vmlopezr">Source Code</a>
-          </footer>
         </header>
         <div className="main">
           <div className="content">
@@ -57,24 +78,36 @@ const Main = memo(() => {
             <Route path="/resume" component={ResumePage} />
           </div>
           <footer className="mobilefooter">
-            <a className="github-link" href="https://github.com/vmlopezr">
+            <a href="https://github.com/vmlopezr">
               <IoLogoGithub
                 color="#fff"
                 size="50px"
                 style={{ padding: '10px' }}
               />
             </a>
-            <a
-              className="linkedin-link"
-              href="https://www.linkedin.com/in/victorlopezrodriguez/"
-            >
+            <a href="https://www.linkedin.com/in/victorlopezrodriguez/">
               <IoLogoLinkedin
                 color="#fff"
                 size="50px"
                 style={{ padding: '10px' }}
               />
             </a>
-            <a href="http://github.com/vmlopezr/portfolio">Source Code</a>
+            <a href={resumepdf}>
+              <IoMdDownload
+                color="#fff"
+                size="50px"
+                style={{ padding: '10px' }}
+              />
+              Resume
+            </a>
+            <a href="http://github.com/vmlopezr/Portfolio">
+              <IoIosDocument
+                color="#fff"
+                size="50px"
+                style={{ padding: '10px' }}
+              />
+              Source Code
+            </a>
           </footer>
         </div>
       </div>
