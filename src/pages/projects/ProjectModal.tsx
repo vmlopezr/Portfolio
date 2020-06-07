@@ -19,7 +19,6 @@ const ProjectModal = memo(
     return (
       <div className={'modal ' + showModal}>
         <div className="overlay" onClick={onClick} />
-
         <section className={'modal-main ' + showModal}>
           <div
             className="video-container"

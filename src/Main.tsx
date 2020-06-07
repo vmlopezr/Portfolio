@@ -81,30 +81,30 @@ const Main = memo(() => {
             <a href="https://github.com/vmlopezr">
               <IoLogoGithub
                 color="#fff"
-                size="50px"
-                style={{ padding: '10px' }}
+                size="20px"
+                style={{ padding: '5px' }}
               />
             </a>
             <a href="https://www.linkedin.com/in/victorlopezrodriguez/">
               <IoLogoLinkedin
                 color="#fff"
-                size="50px"
-                style={{ padding: '10px' }}
+                size="20px"
+                style={{ padding: '5px' }}
               />
             </a>
             <a href={resumepdf}>
               <IoMdDownload
                 color="#fff"
-                size="50px"
-                style={{ padding: '10px' }}
+                size="20px"
+                style={{ padding: '5px' }}
               />
               Resume
             </a>
             <a href="http://github.com/vmlopezr/Portfolio">
               <IoIosDocument
                 color="#fff"
-                size="50px"
-                style={{ padding: '10px' }}
+                size="20px"
+                style={{ padding: '5px' }}
               />
               Source Code
             </a>
