@@ -1,23 +1,23 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "cd146bf24aa8eb7c416d57c6ae34a301",
+    "revision": "255958a65aa3cb69e081e1b37bfd57ec",
     "url": "/Portfolio/index.html"
   },
   {
-    "revision": "615936cade267c0d2cef",
-    "url": "/Portfolio/static/css/main.e848e946.chunk.css"
+    "revision": "542e0f1a0b0c3b509d58",
+    "url": "/Portfolio/static/css/main.4409ea3e.chunk.css"
   },
   {
-    "revision": "861b340e831c27a2a2ec",
-    "url": "/Portfolio/static/js/2.e5e1945f.chunk.js"
+    "revision": "1a0478220562b38c5089",
+    "url": "/Portfolio/static/js/2.ea78c33f.chunk.js"
   },
   {
     "revision": "c64c486544348f10a6d6c716950bc223",
-    "url": "/Portfolio/static/js/2.e5e1945f.chunk.js.LICENSE.txt"
+    "url": "/Portfolio/static/js/2.ea78c33f.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "615936cade267c0d2cef",
-    "url": "/Portfolio/static/js/main.9d420ce7.chunk.js"
+    "revision": "542e0f1a0b0c3b509d58",
+    "url": "/Portfolio/static/js/main.52148c48.chunk.js"
   },
   {
     "revision": "425e952245b014fc3ffb",
@@ -54,5 +54,9 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "519914eb86f30afd8b2173d4db84a66e",
     "url": "/Portfolio/static/media/rpi-dashcam.519914eb.png"
+  },
+  {
+    "revision": "819d5eb01278ab02f023a1f916bedeb0",
+    "url": "/Portfolio/static/media/victor-resume.819d5eb0.pdf"
   }
 ]);

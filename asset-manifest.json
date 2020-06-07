@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/Portfolio/static/css/main.e848e946.chunk.css",
-    "main.js": "/Portfolio/static/js/main.9d420ce7.chunk.js",
-    "main.js.map": "/Portfolio/static/js/main.9d420ce7.chunk.js.map",
+    "main.css": "/Portfolio/static/css/main.4409ea3e.chunk.css",
+    "main.js": "/Portfolio/static/js/main.52148c48.chunk.js",
+    "main.js.map": "/Portfolio/static/js/main.52148c48.chunk.js.map",
     "runtime-main.js": "/Portfolio/static/js/runtime-main.db605a1d.js",
     "runtime-main.js.map": "/Portfolio/static/js/runtime-main.db605a1d.js.map",
-    "static/js/2.e5e1945f.chunk.js": "/Portfolio/static/js/2.e5e1945f.chunk.js",
-    "static/js/2.e5e1945f.chunk.js.map": "/Portfolio/static/js/2.e5e1945f.chunk.js.map",
+    "static/js/2.ea78c33f.chunk.js": "/Portfolio/static/js/2.ea78c33f.chunk.js",
+    "static/js/2.ea78c33f.chunk.js.map": "/Portfolio/static/js/2.ea78c33f.chunk.js.map",
     "index.html": "/Portfolio/index.html",
-    "precache-manifest.9a6ea043fbcac7f25b0f86d6fc757d41.js": "/Portfolio/precache-manifest.9a6ea043fbcac7f25b0f86d6fc757d41.js",
+    "precache-manifest.f11d1dff2d55a01290f3c5f32812fbf5.js": "/Portfolio/precache-manifest.f11d1dff2d55a01290f3c5f32812fbf5.js",
     "service-worker.js": "/Portfolio/service-worker.js",
-    "static/css/main.e848e946.chunk.css.map": "/Portfolio/static/css/main.e848e946.chunk.css.map",
-    "static/js/2.e5e1945f.chunk.js.LICENSE.txt": "/Portfolio/static/js/2.e5e1945f.chunk.js.LICENSE.txt",
+    "static/css/main.4409ea3e.chunk.css.map": "/Portfolio/static/css/main.4409ea3e.chunk.css.map",
+    "static/js/2.ea78c33f.chunk.js.LICENSE.txt": "/Portfolio/static/js/2.ea78c33f.chunk.js.LICENSE.txt",
     "static/media/modular-led.mp4": "/Portfolio/static/media/modular-led.3147bf6e.mp4",
     "static/media/modular-led.png": "/Portfolio/static/media/modular-led.cbb9940f.png",
     "static/media/owi-arm-model.mp4": "/Portfolio/static/media/owi-arm-model.27ca1316.mp4",
@@ -19,12 +19,13 @@
     "static/media/owi-arm-sorting.png": "/Portfolio/static/media/owi-arm-sorting.558e464d.png",
     "static/media/robotics-project.mp4": "/Portfolio/static/media/robotics-project.8edf862a.mp4",
     "static/media/rpi-dashcam.mp4": "/Portfolio/static/media/rpi-dashcam.13b64b86.mp4",
-    "static/media/rpi-dashcam.png": "/Portfolio/static/media/rpi-dashcam.519914eb.png"
+    "static/media/rpi-dashcam.png": "/Portfolio/static/media/rpi-dashcam.519914eb.png",
+    "static/media/victor-resume.pdf": "/Portfolio/static/media/victor-resume.819d5eb0.pdf"
   },
   "entrypoints": [
     "static/js/runtime-main.db605a1d.js",
-    "static/js/2.e5e1945f.chunk.js",
-    "static/css/main.e848e946.chunk.css",
-    "static/js/main.9d420ce7.chunk.js"
+    "static/js/2.ea78c33f.chunk.js",
+    "static/css/main.4409ea3e.chunk.css",
+    "static/js/main.52148c48.chunk.js"
   ]
 }
