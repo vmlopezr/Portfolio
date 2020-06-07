@@ -1,11 +1,11 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "255958a65aa3cb69e081e1b37bfd57ec",
+    "revision": "610123c93f270afdf542fe1ce628b5c4",
     "url": "/Portfolio/index.html"
   },
   {
-    "revision": "542e0f1a0b0c3b509d58",
-    "url": "/Portfolio/static/css/main.4409ea3e.chunk.css"
+    "revision": "716445ca42f4f6a2f69c",
+    "url": "/Portfolio/static/css/main.72e4acd5.chunk.css"
   },
   {
     "revision": "1a0478220562b38c5089",
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/Portfolio/static/js/2.ea78c33f.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "542e0f1a0b0c3b509d58",
-    "url": "/Portfolio/static/js/main.52148c48.chunk.js"
+    "revision": "716445ca42f4f6a2f69c",
+    "url": "/Portfolio/static/js/main.4bba6fe4.chunk.js"
   },
   {
     "revision": "425e952245b014fc3ffb",
@@ -56,7 +56,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/Portfolio/static/media/rpi-dashcam.519914eb.png"
   },
   {
-    "revision": "819d5eb01278ab02f023a1f916bedeb0",
-    "url": "/Portfolio/static/media/victor-resume.819d5eb0.pdf"
+    "revision": "2d77eacc398decff6aedd0c95b3cfac5",
+    "url": "/Portfolio/static/media/victor-resume.2d77eacc.pdf"
   }
 ]);
