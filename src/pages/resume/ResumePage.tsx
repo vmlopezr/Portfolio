@@ -9,6 +9,20 @@ interface position {
 }
 const Experience: position[] = [
   {
+    title: 'Software Developer',
+    dates: 'August 2020 - Present',
+    location: 'Houston, Texas',
+    company: 'Datagration',
+    bullets: [
+      `Architected the web application using existing RESTful API and set standards for the project. Updated endpoint as necessary to add new features to existing funcitonality. (React, Typescript, C#)`,
+      `Worked in tandem with engineers and backend team to successfully deliver visualization for production forecasting. (React, Typescript)`,
+      `Built a custom drag and drop builder to create and visualize flows to automate activities. (React, Typescript)`,
+      `Implemented feature to create configurations for data ingestion into platform. (React, Typescript)`,
+      `Created text editor using Monaco Editor and implemented key features such as auto-complete, signature and hover documentations for custom scripting language. (React, Typescript)`,
+      `Developed a custom spread-sheet component using React-Window that can handle up to 500k x 500k rows and columns. (React, Typescript)`
+    ],
+  },
+  {
     title: 'Controls Engineering Co-op',
     dates: 'August 2018 - May 2019',
     location: 'Tulsa, Oklahoma',
