@@ -1,5 +1,5 @@
 import React, { memo } from 'react';
-import { HashRouter, NavLink, Route } from 'react-router';
+import { HashRouter, NavLink, Route, Routes } from 'react-router';
 import Home from './pages/home/Home';
 import Projects from './pages/projects/Projects';
 import ResumePage from './pages/resume/ResumePage';
@@ -73,9 +73,11 @@ const Main = memo(() => {
                 </header>
                 <div className="main">
                     <div className="content">
-                        <Route path="/" element={<Home />} />
-                        <Route path="/projects" element={<Projects />} />
-                        <Route path="/resume" element={<ResumePage />} />
+                        <Routes>
+                            <Route path="/" element={<Home />} />
+                            <Route path="/projects" element={<Projects />} />
+                            <Route path="/resume" element={<ResumePage />} />
+                        </Routes>
                     </div>
                     <footer className="mobilefooter">
                         <a href="https://github.com/vmlopezr">
